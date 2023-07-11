@@ -59,7 +59,7 @@ struct DataResponse: Decodable {
 //    let availability, image, description, sku, updatedAt: String
 //}
 
-struct Deal: Codable, Identifiable {
+struct Deal: Hashable, Codable, Identifiable {
     let id, title, url, description: String
     let price: Int
     let product: Product
@@ -69,45 +69,45 @@ struct Deal: Codable, Identifiable {
     let comments: [Comment]
 }
 
-struct Comment: Codable, Identifiable {
+struct Comment: Hashable, Codable, Identifiable {
     let id, createdAt, text: String
     let user: User
 }
 
-struct User: Codable {
+struct User: Hashable, Codable {
     let id, name: String
 }
 
-struct Like: Codable {
+struct Like: Hashable, Codable {
     let id: String
     let user: UserLikes
 }
 
-struct UserLikes: Codable {
+struct UserLikes: Hashable, Codable {
     let id, name: String
     let likes: [LikeInside]
 }
 
-struct LikeInside: Codable {
+struct LikeInside: Hashable, Codable {
     let id: String
     let deal: DealInside
 }
 
-struct DealInside: Codable {
+struct DealInside: Hashable, Codable {
     let id, title, url: String
     let price: Int
     let createdAt, updatedAt: String
 }
 
-struct Product: Codable {
+struct Product: Hashable, Codable {
     let availability, image, description, sku, updatedAt: String
 }
 
-struct Dislike: Codable {
+struct Dislike: Hashable, Codable {
     let id: String
     let user: DislikeUser
 }
 
-struct DislikeUser: Codable {
+struct DislikeUser: Hashable, Codable {
     let name: String
 }

@@ -9,38 +9,45 @@ import SwiftUI
 import UIKit
 struct HomeView: View {
     @StateObject var viewModel = HomeViewModel()
-
+    
     var body: some View {
-//        viewModel.deals.first
-        NavigationView {
+        //        NavigationView {
+        //            ScrollView {
+        //                LazyVGrid(columns: Array(repeating: .init(), count: 2)) {
+        //                    ForEach(viewModel.deals) { deal in
+        //                        NavigationLink(destination: DealDetailView(deal: deal)){
+        //                            DealCell(deal: deal)
+        //                        }
+        //                        .navigationTitle("Today's Deals")
+        //                    }
+        //                }
+        //                .padding(.horizontal, 8) // Add horizontal padding to the grid
+        //            }
+        //            .navigationTitle("Hot Deals")
+        //        }
+        //        .onAppear {
+        //            viewModel.fetchDeals()
+        //        }
+        //    }
+        NavigationStack {
             ScrollView {
-//
-//                if let firstDeal = viewModel.deals.first {
-//                                DealDetailView(deal: firstDeal)
-//                                    .navigationTitle("Today's Deals")
-//                            }
-//                if let firstDeal = viewModel.deals.first {
-//                                CustomerReviewView(deal: firstDeal)
-//                                    .navigationTitle("Customer Review")
-//                            }
-//
-//
                 LazyVGrid(columns: Array(repeating: .init(), count: 2)) {
                     ForEach(viewModel.deals) { deal in
-                        NavigationLink(destination: DealDetailView(deal: deal)){
+                        NavigationLink(value: deal){
                             DealCell(deal: deal)
                         }
-                        .navigationTitle("Today's Deals")
-
                     }
+                    .padding(.horizontal, 8) // Add horizontal padding to the grid
                 }
-                .padding(.horizontal, 8) // Add horizontal padding to the grid
-
+                .navigationTitle("Hot Deals")
+                .navigationDestination(for: Deal.self) { deal in
+                    DealDetailView(deal: deal)
+                        .navigationTitle("Today's Deals")
+                }
             }
-            .navigationTitle("Hot Deals")
-        }
-        .onAppear {
-            viewModel.fetchDeals()
+            .onAppear {
+                viewModel.fetchDeals()
+            }
         }
     }
 }
@@ -73,7 +80,6 @@ struct DealCell: View {
                                 .cornerRadius(5)
                                 .foregroundColor(.red)
                                 .position(x: 25, y: 15) // Positions the view
-                                .frame()
                 //Like count
                 HStack{
                     Spacer()
@@ -390,3 +396,13 @@ func formatDate(timestamp: Double) -> String {
     formatter.dateFormat = "MM/dd/yyyy"
     return formatter.string(from: date)
 }
+
+
+//                if let firstDeal = viewModel.deals.first {
+//                                DealDetailView(deal: firstDeal)
+//                                    .navigationTitle("Today's Deals")
+//                            }
+//                if let firstDeal = viewModel.deals.first {
+//                                CustomerReviewView(deal: firstDeal)
+//                                    .navigationTitle("Customer Review")
+//                            }
