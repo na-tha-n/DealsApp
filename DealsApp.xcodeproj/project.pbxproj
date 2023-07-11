@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		4859AB7E2A5731E500F38189 /* DealsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4859AB7D2A5731E500F38189 /* DealsModel.swift */; };
 		4859AB812A576B9400F38189 /* DealDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4859AB802A576B9400F38189 /* DealDetailView.swift */; };
+		48C9FCA82A5E1FDE00956835 /* DealCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48C9FCA72A5E1FDE00956835 /* DealCell.swift */; };
+		48C9FCAA2A5E204A00956835 /* CustomerReviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48C9FCA92A5E204A00956835 /* CustomerReviewView.swift */; };
 		7C2AFD2D2A53043500BA663D /* DealsAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C2AFD2C2A53043500BA663D /* DealsAppApp.swift */; };
 		7C2AFD2F2A53043500BA663D /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C2AFD2E2A53043500BA663D /* HomeView.swift */; };
 		7C2AFD312A53043600BA663D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7C2AFD302A53043600BA663D /* Assets.xcassets */; };
@@ -42,6 +44,8 @@
 /* Begin PBXFileReference section */
 		4859AB7D2A5731E500F38189 /* DealsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DealsModel.swift; sourceTree = "<group>"; };
 		4859AB802A576B9400F38189 /* DealDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DealDetailView.swift; sourceTree = "<group>"; };
+		48C9FCA72A5E1FDE00956835 /* DealCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DealCell.swift; sourceTree = "<group>"; };
+		48C9FCA92A5E204A00956835 /* CustomerReviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerReviewView.swift; sourceTree = "<group>"; };
 		7C2AFD292A53043500BA663D /* DealsApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DealsApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7C2AFD2C2A53043500BA663D /* DealsAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DealsAppApp.swift; sourceTree = "<group>"; };
 		7C2AFD2E2A53043500BA663D /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
@@ -88,6 +92,8 @@
 			children = (
 				7C2AFD2E2A53043500BA663D /* HomeView.swift */,
 				4859AB802A576B9400F38189 /* DealDetailView.swift */,
+				48C9FCA72A5E1FDE00956835 /* DealCell.swift */,
+				48C9FCA92A5E204A00956835 /* CustomerReviewView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -309,12 +315,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				7C2AFD602A53052000BA663D /* DealsService.swift in Sources */,
+				48C9FCAA2A5E204A00956835 /* CustomerReviewView.swift in Sources */,
 				7C2AFD622A53056700BA663D /* HomeViewModel.swift in Sources */,
 				7C2AFD2F2A53043500BA663D /* HomeView.swift in Sources */,
 				4859AB7E2A5731E500F38189 /* DealsModel.swift in Sources */,
 				7C2AFD2D2A53043500BA663D /* DealsAppApp.swift in Sources */,
 				7C2AFD5E2A5304FA00BA663D /* APIError.swift in Sources */,
 				4859AB812A576B9400F38189 /* DealDetailView.swift in Sources */,
+				48C9FCA82A5E1FDE00956835 /* DealCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
